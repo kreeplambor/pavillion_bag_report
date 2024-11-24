@@ -42,7 +42,7 @@ def proc_call(call):
 
 def reg(message, data: str, mode: bool = False):
     mode = {False: 'zone', True: 'inst'}[mode]
-    if mode is 'zone':
+    if mode == 'zone':
         text, lines_columns, callback_data = Functions.reg_message()
         markup = Markup.inline(lines_columns, callback_data)
         bot.send_message(message.chat.id, text, reply_markup=markup)
@@ -52,3 +52,6 @@ def reg(message, data: str, mode: bool = False):
     markup = Markup.inline(lines_columns, callback_data)
     bot.send_message(message.chat.id, text, reply_markup=markup)
     return
+
+
+bot.polling()

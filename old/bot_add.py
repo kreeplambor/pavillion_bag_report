@@ -64,7 +64,7 @@ class Functions:
         return(self.reg_messasge(zone))
 
     # регистрация
-    def reg_messasge(self, zone=None):
+    def reg_message(self, zone=None):
         # даём выбрать зону
         if not zone:
             zones = Zone.view_zones()
