@@ -20,8 +20,8 @@ def handle_start(message):
     user_id = message.from_user.id
 
     bot.send_message(
-        message.chat.id,
-        "Приветственное сообщение")  # привет
+        user_id,
+        f"Приветственное сообщение {user_id}")  # привет
     if not check_reg(user_id):
         reg(user_id)
 
@@ -34,7 +34,7 @@ def echo_message(message):
 
 # отправка сообщений
 def message_sendler(user_id, text: str, markup=None):
-    pass
+    bot.send_message()
 
 
 # проверка регистрации
